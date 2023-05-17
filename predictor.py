@@ -240,8 +240,8 @@ class Predictor(BasePredictor):
                         zip_info.filename = os.path.basename(zip_info.filename)
                         zip_ref.extract(zip_info, cog_class_data)
 
-        pretrained_model_name_or_path = "runwayml/stable-diffusion-v1-5"
-        pretrained_vae_name_or_path = "runwayml/stable-diffusion-v1-5"
+        pretrained_model_name_or_path = "prompthero/openjourney-v4"
+        pretrained_vae_name_or_path = "stabilityai/sd-vae-ft-mse"
 
         if ckpt_base is not None:
             run_cmd(
