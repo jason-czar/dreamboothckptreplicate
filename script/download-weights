@@ -22,27 +22,27 @@ os.makedirs(cache_dir, exist_ok=True)
 os.makedirs(vae_cache_dir, exist_ok=True)
 
 pipe = StableDiffusionPipeline.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     cache_dir=cache_dir,
     revision="fp16",
     torch_dtype=torch.float16,
 )
 
 tokenizer = CLIPTokenizer.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     subfolder="tokenizer",
     cache_dir=cache_dir,
     revision="fp16",
 )
 
 text_encoder = CLIPTextModel.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     subfolder="text_encoder",
     cache_dir=cache_dir,
     revision="fp16",
 )
 vae = AutoencoderKL.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     subfolder="vae",
     cache_dir=cache_dir,
     revision="fp16",
@@ -54,14 +54,14 @@ pretrained_vae = AutoencoderKL.from_pretrained(
     revision=None
 )
 unet = UNet2DConditionModel.from_pretrained(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     subfolder="unet",
     cache_dir=cache_dir,
     revision="fp16",
 )
 
 noise_scheduler = DDPMScheduler.from_config(
-    "runwayml/stable-diffusion-v1-5",
+    "prompthero/openjourney",
     subfolder="scheduler",
     cache_dir=cache_dir,
 )
